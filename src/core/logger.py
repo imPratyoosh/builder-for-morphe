@@ -1,16 +1,17 @@
 import os
 import sys
 
-IS_GITHUB: bool = bool(os.getenv("GITHUB_REPOSITORY"))
+IS_GITHUB: bool = os.getenv("GITHUB_ACTIONS") == "true"
 
 
 class BuildAbortError(Exception):
     pass
 
 def _log(color: str, symbol: str, msg: str, gh_level: str | None = None) -> None:
-    print(f"\033[0;{color}m[{symbol}] {msg}\033[0m", file=sys.stderr)
     if IS_GITHUB and gh_level:
-        print(f"::{gh_level}::{msg}\n", file=sys.stderr)
+        print(f"::{gh_level}::{msg}", file=sys.stderr)
+    else:
+        print(f"\033[0;{color}m[{symbol}] {msg}\033[0m", file=sys.stderr)
 
 def pr(msg: str) -> None:
     _log("32", "+", msg)
