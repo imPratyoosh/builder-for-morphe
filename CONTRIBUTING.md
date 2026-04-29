@@ -22,7 +22,7 @@ Here you will find a step-by-step technical guide on how to set up your environm
 2. 📥 **Installation**:
 
 ```bash
-git clone https://github.com/krvstek/uni-apks.git
+git clone --depth 1 https://github.com/krvstek/uni-apks.git
 cd uni-apks
 ```
 
