@@ -18,7 +18,7 @@ Here you can download and use applications selected for this repository, which a
 - [⭐ Star History](#star-history)
 
 <div align="center">
-<a href="https://github.com/nvbangg/builder-for-morphe/releases"><img src="https://img.shields.io/github/downloads/nvbangg/builder-for-morphe/total?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAyMGgxNHYtMkg1djJ6TTE5IDloLTRWM0g5djZINWw3IDcgNy03eiIvPjwvc3ZnPg==&label=Downloads" alt="Releases"></a>　<a href="https://github.com/nvbangg/awesome-for-morphe"><img src="https://img.shields.io/badge/%F0%9F%94%97%20Related%20Repo-awesome--for--morphe-blue" alt="Related Repo"></a>　<a href="https://github.com/nvbangg/builder-for-morphe"><img src="https://img.shields.io/github/stars/nvbangg/builder-for-morphe?label=Star%20this%20repo%20if%20useful%20%E2%AD%90&logo=github" alt="Stars"></a>　<a href="https://github.com/sponsors/nvbangg"><img src="https://img.shields.io/badge/Support-pink?style=social&logo=github-sponsors" alt="Sponsor"></a>
+<a href="https://github.com/nvbangg/builder-for-morphe/releases"><img src="https://img.shields.io/github/downloads/nvbangg/builder-for-morphe/total?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAyMGgxNHYtMkg1djJ6TTE5IDloLTRWM0g5djZINWw3IDcgNy03eiIvPjwvc3ZnPg==&label=Downloads" alt="Releases"></a>　<a href="https://github.com/nvbangg/awesome-for-morphe"><img src="https://img.shields.io/badge/%F0%9F%94%97%20Related%20Repo-awesome--for--morphe-blue" alt="Related Repo"></a>　<a href="https://github.com/nvbangg/builder-for-morphe"><img src="https://img.shields.io/github/stars/nvbangg/builder-for-morphe?label=Star%20this%20repo%20if%20useful%20%E2%AD%90&logo=github-sponsors" alt="Stars"></a>　<a href="https://github.com/nvbangg"><img src="https://img.shields.io/badge/nvbangg-black?style=social&logo=github" alt="GitHub"></a>
 </div>
 
 ---
@@ -208,7 +208,7 @@ This repository was generated from the [krvstek/uni-apks](https://github.com/krv
 ## <a id="star-history"></a> ⭐ Star History 
 
 <div>
-<a href="https://github.com/nvbangg/builder-for-morphe"><img src="https://img.shields.io/github/stars/nvbangg/builder-for-morphe?label=Star%20this%20repo%20if%20useful%20%E2%AD%90&logo=github" alt="Stars"></a>　<a href="https://github.com/sponsors/nvbangg"><img src="https://img.shields.io/badge/Support-pink?style=social&logo=github-sponsors" alt="Sponsor"></a>
+<a href="https://github.com/nvbangg/builder-for-morphe"><img src="https://img.shields.io/github/stars/nvbangg/builder-for-morphe?label=Star%20this%20repo%20if%20useful%20%E2%AD%90&logo=github-sponsors" alt="Stars"></a>
 
 <a href="https://www.star-history.com/?repos=nvbangg%2Fbuilder-for-morphe&type=date&legend=top-left">
  <picture>
