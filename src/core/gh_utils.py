@@ -17,8 +17,7 @@ def get_matrix(source: str) -> None:
             continue
 
         if entry.arch == "both":
-            include.append({"id": entry.table, "arch": "arm64-v8a"})
-            include.append({"id": entry.table, "arch": "armeabi-v7a"})
+            include.extend([{"id": entry.table, "arch": "arm64-v8a"}, {"id": entry.table, "arch": "armeabi-v7a"}])
         else:
             include.append({"id": entry.table})
 
@@ -50,13 +49,11 @@ def check_builds_needed() -> None:
         our_releases_by_brand: dict[str, str] = {}
         try:
             our_releases_raw = net.gh_get(f"https://api.github.com/repos/{repo}/releases?per_page=100")
-            our_releases: list[dict] = json.loads(our_releases_raw)
-            for rel in our_releases:
-                tag: str = rel.get("tag_name", "")
-                published: str = rel.get("published_at", "") or ""
-                for brand in seen:
-                    if tag.endswith(f"-{brand}") and brand not in our_releases_by_brand:
-                        our_releases_by_brand[brand] = published
+            for rel in json.loads(our_releases_raw):
+                tag = rel.get("tag_name", "")
+                brand = tag.rsplit("-", 1)[-1] if "-" in tag else ""
+                if brand in seen and brand not in our_releases_by_brand:
+                    our_releases_by_brand[brand] = rel.get("published_at", "") or ""
         except Exception as exc:
             epr(f"Failed to fetch our releases: {exc}")
             our_releases_by_brand = {}
@@ -64,11 +61,9 @@ def check_builds_needed() -> None:
         brands_to_build: list[str] = []
         for brand, patches_source in seen.items():
             our_date = our_releases_by_brand.get(brand, "")
-
             upstream_date = ""
             try:
-                upstream_raw = net.gh_get(f"https://api.github.com/repos/{patches_source}/releases/latest")
-                upstream_rel: dict = json.loads(upstream_raw)
+                upstream_rel = json.loads(net.gh_get(f"https://api.github.com/repos/{patches_source}/releases/latest"))
                 upstream_date = upstream_rel.get("published_at", "") or ""
             except ResourceNotFoundError:
                 epr(f"No upstream release found for '{patches_source}', skipping brand '{brand}'")
@@ -87,25 +82,26 @@ def _parse_log_file(log: Path, green_lines: list[str], collected: list[str]) -> 
     microg_line = ""
     capturing = False
     current: list[str] = []
-    for raw in log.read_text(encoding="utf-8").splitlines():
-        line = raw.strip()
-        if not line:
-            continue
+    with log.open("r", encoding="utf-8") as f:
+        for raw in f:
+            line = raw.strip()
+            if not line:
+                continue
 
-        if line.startswith("- 🟢"):
-            green_lines.append(f"{line}  ")
-        elif not microg_line and line.startswith("▶️") and "MicroG" in line:
-            microg_line = line
+            if line.startswith("- 🟢"):
+                green_lines.append(f"{line}  ")
+            elif not microg_line and line.startswith("▶️") and "MicroG" in line:
+                microg_line = line
 
-        if line.startswith(">") and "CLI:" in line:
-            capturing = True
-            current = []
+            if line.startswith(">") and "CLI:" in line:
+                capturing = True
+                current = []
 
-        if capturing:
-            current.append(f"{line}  ")
-            if line.startswith("[") and "Changelog]" in line:
-                collected.append("\n".join(current))
-                capturing = False
+            if capturing:
+                current.append(f"{line}  ")
+                if line.startswith("[") and "Changelog]" in line:
+                    collected.append("\n".join(current))
+                    capturing = False
 
     if capturing:
         wpr(f"Unclosed CLI section in '{log}', changelog end marker not found")
