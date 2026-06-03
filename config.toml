@@ -164,6 +164,13 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/busuu/busuu-learn-languages/"
 uptodown-dlurl = "https://busuu.en.uptodown.com/android"
 version = "32.30.0(1575420)"
 
+[Cake]
+patches-source = "hoo-dles/morphe-patches"
+brand = "hoo-dles"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/cake-corp/cake-lesson-updates-every-day/"
+uptodown-dlurl = "https://me-mycake.en.uptodown.com/android"
+arch = "both"
+
 [CamScanner]
 patches-source = "hoo-dles/morphe-patches"
 brand = "hoo-dles"
