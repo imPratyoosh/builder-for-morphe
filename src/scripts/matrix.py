@@ -142,10 +142,11 @@ def check_builds_needed(force_all: bool = False) -> None:
                 brands_to_build.append(brand)
             elif upstream_date and datetime.fromisoformat(upstream_date) > datetime.fromisoformat(our_date):
                 changelog_lower = changelog_text.lower()
-                has_apps = any(
-                    not app.changelog_keywords or any(kw in changelog_lower for kw in app.changelog_keywords)
-                    for app in entries_by_brand.get(brand, [])
-                )
+                has_apps = False
+                for app in entries_by_brand.get(brand, []):
+                    if not app.changelog_keywords or any(kw in changelog_lower for kw in app.changelog_keywords):
+                        has_apps = True
+                        break
                 if has_apps:
                     brands_to_build.append(brand)
     print(json.dumps(brands_to_build))
