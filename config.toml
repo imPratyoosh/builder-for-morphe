@@ -93,3 +93,15 @@ version = "latest"
 [Niagara-Launcher.patches]
 "github:hoo-dles/morphe-patches" = { version = "dev", include = ["Enable niagara pro", "Hide app icon"] }
 "github:MorpheApp/morphe-patches" = ["Disable play store updates"]
+
+[Pinterest]
+enabled = true
+Brand = "browzomje"
+apkmirrior-dlurl = "https://www.apkmirror.com/apk/pinterest/pinterest-one-destination-for-a-world-of-inspiration/"
+changelog-keywords = ["Pinterest"]
+version = "latest"
+arch = "arm64-v8a"
+
+[Pinterest.patches]
+"github:browzomje/browzomje-patches" = { version = "dev" }
+"github:MorpheApp/morphe-patches" = ["Disable play store updates"]
