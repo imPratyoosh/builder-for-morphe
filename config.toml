@@ -97,7 +97,7 @@ version = "latest"
 [Pinterest]
 enabled = true
 Brand = "browzomje"
-apkmirrior-dlurl = "https://www.apkmirror.com/apk/pinterest/pinterest-one-destination-for-a-world-of-inspiration/"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/pinterest/pinterest-one-destination-for-a-world-of-inspiration/"
 changelog-keywords = ["Pinterest"]
 version = "latest"
 arch = "arm64-v8a"
