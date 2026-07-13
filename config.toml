@@ -122,4 +122,4 @@ arch = "arm64-v8a"
 
 [Gboard.patches]
 "github:jasonwu1994/Gboard-patches" = []
-"github:jkennethcarino/adobo" = { version = "dev", include = ["Enable access points menu redesign", "Enable voice typing in incognito"], exclude = ["Always-incognito mode"]
+"github:jkennethcarino/adobo" = { version = "dev", include = ["Enable access points menu redesign", "Enable voice typing in incognito"], exclude = ["Always-incognito mode"] }
