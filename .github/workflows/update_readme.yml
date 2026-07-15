@@ -18,12 +18,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4.2.2
 
-      - name: Download Build Logs via GitHub CLI
+      - name: Download Build Logs via GitHub API
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Downloads the entire raw log of the build that just finished
-          gh run view ${{ github.event.workflow_run.id }} --log > build.log
+          # 1. Download the full log archive as a zip file (only 1 API request, bypassing limits)
+          curl -s -L -H "Authorization: Bearer $GH_TOKEN" \
+               -H "Accept: application/vnd.github+json" \
+               -o logs.zip \
+               "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}/logs"
+          
+          # 2. Unzip the logs into a temporary folder
+          unzip -q logs.zip -d all_logs
+          
+          # 3. Combine all the individual job text files into our single build.log
+          find all_logs -type f -name "*.txt" -exec cat {} + > build.log
 
       - name: Set up Python
         uses: actions/setup-python@v5
