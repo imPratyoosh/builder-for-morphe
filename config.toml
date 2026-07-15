@@ -40,7 +40,7 @@ arch = "arm64-v8a"
 version = "latest"
 
 [YouTube.patches]
-"github:MorpheApp/morphe-patches" = { version = "latest", exclude = ["Custom branding", "Enable debugging", "Disable play store updates"] }
+"github:MorpheApp/morphe-patches" = { version = "latest", exclude = ["Custom branding", "Enable debugging"] }
 
 [YT-Music]
 enabled = true
@@ -52,7 +52,7 @@ arch = "arm64-v8a"
 version = "latest"
 
 [YT-Music.patches]
-"github:MorpheApp/morphe-patches" = { version = "latest", exclude = ["Custom branding", "Enable debugging", "Disable play store updates"] }
+"github:MorpheApp/morphe-patches" = { version = "latest", exclude = ["Custom branding", "Enable debugging"] }
 
 [Reddit]
 enabled = true
@@ -119,7 +119,7 @@ arch = "arm64-v8a"
 [Gboard]
 enabled = true
 Brand = "Gboard"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/gboard/"
+# apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/gboard/"
 uptodown-dlurl = "https://gboard-go.en.uptodown.com/android"
 changelog-keywords = ["Gboard"]
 version =  "17.0.10.880768217-release-arm64-v8a"
