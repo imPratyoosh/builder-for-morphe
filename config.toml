@@ -59,7 +59,7 @@ enabled = true
 brand = "Reddit"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit"
 uptodown-dlurl = "https://reddit-official-app.en.uptodown.com/android"
-version = "latest"
+version = "2026.28.0"
 
 [Reddit.patches]
 "github:MorpheApp/morphe-patches" = []
