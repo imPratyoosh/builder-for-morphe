@@ -2,7 +2,7 @@ strict-sigcheck = false
 
 [YouTube-Stable]
 brand = "YouTube-Stable"
-enabled = true
+enabled = false
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 arch = "arm64-v8a"
@@ -13,7 +13,7 @@ arch = "arm64-v8a"
 
 [YT-Music-Stable]
 brand = "YT-Music-Stable"
-enabled = true
+enabled = false
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 arch = "arm64-v8a"
