@@ -22,7 +22,8 @@ Click on an app below to see detailed info.
 ---
 
 ## 🤝 Credits & Thanks
-* [nvbangg](https://github.com/nvbangg) for the original Morphe automated builder.
+* [krvstek/uni-apks](https://github.com/krvstek/uni-apks)
+* [nvbangg/builder-for-morphe](https://github.com/nvbangg/builder-for-morphe)
 * The Morphe developers and open-source patch maintainers.
 
 ## Notice
